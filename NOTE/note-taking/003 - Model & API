@@ -1,0 +1,13 @@
+# Objective
+- Create User Model
+- Create routes for client request
+- Test Register Functio
+
+# Learn
+## Create Register function
+- Migrate User model to database (without writing SQL Query)
+- Need to encrypt password
+## Route
+- Setup route for API request
+## Test
+- Test with Postman or Thunder Client
