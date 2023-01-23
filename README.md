@@ -17,6 +17,8 @@
 - [Fiber](https://github.com/gofiber/fiber) for Web Framework
 - [godotenv](https://github.com/joho/godotenv) for using environment variables
 - [bcrypt] for password hash function <code>go get golang.org/x/crypto/bcrypt</code>
+- [JWT](github.com/dgrijalva/jwt-go/) for client side authentication
+
 
 # Resources
 - [Tutorial](https://www.youtube.com/playlist?list=PLJ2eCBnvv6JVQtnuKbtJSRu0OkuNicOeW)
