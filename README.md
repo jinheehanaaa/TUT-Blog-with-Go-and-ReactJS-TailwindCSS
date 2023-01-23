@@ -18,5 +18,8 @@
 - Connect to database
 - Test
 
+# 003: User model 
+- Migrate User model to database (without writing SQL Query)
+
 # Resources
-- [Tutorial]()
+- [Tutorial]
