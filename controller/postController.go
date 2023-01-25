@@ -8,6 +8,7 @@ import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/jinheehanaaa/go-blog-backend/database"
 	"github.com/jinheehanaaa/go-blog-backend/models"
+	"github.com/jinheehanaaa/go-blog-backend/util"
 )
 
 func CreatePost(c *fiber.Ctx) error {
@@ -66,7 +67,14 @@ func UpdatePost(c *fiber.Ctx) error {
 	return c.JSON(fiber.Map{
 		"message": "Post updated successfully",
 	})
+	//return c.JSON(blog) // for test purpose
+}
 
-	//return c.JSON(blog)
+func UniquePost(c *fiber.Ctx) error {
+	cookie := c.Cookies("jwt")
+	id, _ := util.Parsejwt(cookie) // get id of authenticated user
+	var blog []models.Blog
+	database.DB.Model(&blog).Where("user_id=?", id).Preload("User").Find(&blog) // Find user id from database "blog"
 
+	return c.JSON(blog)
 }

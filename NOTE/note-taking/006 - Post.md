@@ -2,19 +2,21 @@
 - Dealing with Post
 
 # Learn
-## GET for Pagination
+## Pagination (GET)
 - http://localhost:3000/api/allpost?page=1
 
-## Single Post
+## Single Post (GET)
 - http://localhost:3000/api/allpost/2
 
-## Update Post
-
+## Update Post (PUT)
 ``` JSON
 {
   "title": "Updated Post",
   "desc": "Updated Description",
-  "image": "update.png",
+  "image": "updated.png",
   "UserId": "1"
 }
 ```
+
+## Unique Post for particular user (GET)
+- http://localhost:3000/api/uniquepost
