@@ -10,6 +10,10 @@
 - Post (Create, Update, Delete)
 - Upload image to local storage
 
+# What's not in this project
+- Delete account
+- Logout account with session
+
 # CMD
 - Live Run => <code>nodemon --watch './**/*.go' --signal SIGTERM --exec 'go' run main.go </code>
 
@@ -19,7 +23,7 @@
 - [Postman](https://www.postman.com/), or Thunder Client for Testing API
 
 # GO Packages
-- [GORM](https://gorm.io/docs/index.html) for SQL connction <code></code>
+- [GORM](https://gorm.io/docs/index.html) for SQL connction
 - [Fiber](https://github.com/gofiber/fiber) for Web Framework
 - [godotenv](https://github.com/joho/godotenv) for using environment variables
 - [bcrypt](https://pkg.go.dev/golang.org/x/crypto/bcrypt) for using hash function => <code>go get golang.org/x/crypto/bcrypt</code>
