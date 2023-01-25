@@ -1,6 +1,7 @@
 package controller
 
 import (
+	"errors"
 	"fmt"
 	"math"
 	"strconv"
@@ -9,6 +10,7 @@ import (
 	"github.com/jinheehanaaa/go-blog-backend/database"
 	"github.com/jinheehanaaa/go-blog-backend/models"
 	"github.com/jinheehanaaa/go-blog-backend/util"
+	"gorm.io/gorm"
 )
 
 func CreatePost(c *fiber.Ctx) error {
@@ -77,4 +79,23 @@ func UniquePost(c *fiber.Ctx) error {
 	database.DB.Model(&blog).Where("user_id=?", id).Preload("User").Find(&blog) // Find user id from database "blog"
 
 	return c.JSON(blog)
+}
+
+func DeletePost(c *fiber.Ctx) error {
+	id, _ := strconv.Atoi(c.Params("id"))
+	blog := models.Blog{
+		Id: uint(id),
+	}
+	deleteQuery := database.DB.Delete(&blog)
+	if errors.Is(deleteQuery.Error, gorm.ErrRecordNotFound) {
+		c.Status(400)
+		return c.JSON(fiber.Map{
+			"message": "Post not found!",
+		})
+	}
+
+	return c.JSON(fiber.Map{
+		"message": "Post deleted successfully!",
+	})
+
 }

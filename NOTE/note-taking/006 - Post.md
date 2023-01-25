@@ -18,5 +18,8 @@
 }
 ```
 
+## Delete Post (DELETE)
+- http://localhost:3000/api/deletepost/6
+
 ## Unique Post for particular user (GET)
 - http://localhost:3000/api/uniquepost
