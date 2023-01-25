@@ -42,5 +42,13 @@ func AllPost(c *fiber.Ctx) error {
 			"last_page": math.Ceil(float64(int(total) / limit)),
 		},
 	})
+}
 
+func DetailPost(c *fiber.Ctx) error {
+	id, _ := strconv.Atoi(c.Params("id"))
+	var blogpost models.Blog
+	database.DB.Where("id=?", id).Preload("User").First(&blogpost)
+	return c.JSON(fiber.Map{
+		"data": blogpost,
+	})
 }
