@@ -52,3 +52,21 @@ func DetailPost(c *fiber.Ctx) error {
 		"data": blogpost,
 	})
 }
+
+func UpdatePost(c *fiber.Ctx) error {
+	id, _ := strconv.Atoi(c.Params("id"))
+	blog := models.Blog{
+		Id: uint(id),
+	}
+	if err := c.BodyParser(&blog); err != nil {
+		fmt.Println("Unable to parse body")
+	}
+	database.DB.Model(&blog).Updates(blog)
+
+	return c.JSON(fiber.Map{
+		"message": "Post updated successfully",
+	})
+
+	//return c.JSON(blog)
+
+}

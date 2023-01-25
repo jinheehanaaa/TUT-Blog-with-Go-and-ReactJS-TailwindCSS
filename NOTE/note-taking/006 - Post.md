@@ -7,3 +7,14 @@
 
 ## Single Post
 - http://localhost:3000/api/allpost/2
+
+## Update Post
+
+``` JSON
+{
+  "title": "Updated Post",
+  "desc": "Updated Description",
+  "image": "update.png",
+  "UserId": "1"
+}
+```
