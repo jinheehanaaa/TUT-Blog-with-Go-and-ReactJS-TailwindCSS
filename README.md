@@ -7,6 +7,8 @@
 - Hash functions for password using dcrypt
 - Routes for API requests using Fiber
 - Middleware for handling Client's request 
+- Post (Create, Update, Delete)
+- Upload image to local storage
 
 # CMD
 - Live Run => <code>nodemon --watch './**/*.go' --signal SIGTERM --exec 'go' run main.go </code>
